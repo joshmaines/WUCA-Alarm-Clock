@@ -1,6 +1,7 @@
 WUCA Wake Up Call Application
 ===========
 
+Alarm clock desktop app written in C# for Windows 7+.
 Based on m1dnight's Alarm-Clock: https://github.com/m1dnight/Alarm-Clock
 
 Upcoming features:
