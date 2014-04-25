@@ -6,3 +6,14 @@ e:\userdata tower\tower documents\visual studio 2012\Projects\Alarm v2.0\Alarm v
 e:\userdata tower\tower documents\visual studio 2012\Projects\Alarm v2.0\Alarm v2.0\obj\Release\Alarm v2.0.csproj.GenerateResource.Cache
 e:\userdata tower\tower documents\visual studio 2012\Projects\Alarm v2.0\Alarm v2.0\obj\Release\Alarm v2.0.exe
 e:\userdata tower\tower documents\visual studio 2012\Projects\Alarm v2.0\Alarm v2.0\obj\Release\Alarm v2.0.pdb
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\bin\Release\Alarm v2.0.exe.config
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm v2.0.exe
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm v2.0.pdb
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm v2.0.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm_v2._0.Main.resources
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm_v2._0.Properties.Resources.resources
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm v2.0.csproj.GenerateResource.Cache
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\bin\Release\Alarm v2.0.exe
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\bin\Release\Alarm v2.0.pdb
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Interop.WMPLib.dll
+C:\Users\Josh\Documents\Programming\CSharp\Alarm-Clock-master\Alarm v2.0\obj\Release\Alarm v2.0.csproj.ResolveComReference.cache

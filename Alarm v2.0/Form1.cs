@@ -40,8 +40,23 @@ namespace Alarm_v2._0
         {
             InitializeComponent();
         }
+        private void GoFullscreen(bool fullscreen)
+        {
+            if (fullscreen)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            GoFullscreen(true);
         }
 
         //Others
@@ -62,7 +77,7 @@ namespace Alarm_v2._0
                 if (!od.FileName.Equals(""))
                 {
                     _alarmSong = new FileInfo(od.FileName);
-                    lblSongtitle.Text = _alarmSong.FullName.Substring(_alarmSong.FullName.LastIndexOf(@"\", StringComparison.Ordinal) + 1);
+                    lblSongtitle.Text = "Chosen sound: "+_alarmSong.FullName.Substring(_alarmSong.FullName.LastIndexOf(@"\", StringComparison.Ordinal) + 1);
                     btnSet.Enabled = true;
                 }
             }
@@ -82,25 +97,53 @@ namespace Alarm_v2._0
         }
         private void btnSet_Click(object sender, EventArgs e)
         {
-            //When we click btnSet it means that we
-            //1) want to set our alarm
-            //2) Made a mistake and changed options and pressed set again
 
-            //If there was an alarm set, and timenarration is on, we need to turn it off
-            if (_narrationTask != null)
-                _tokenSource.Cancel();
-
-            //Just to be sure, delete the media player too
-            if (_mediaPlayer != null)
-                _mediaPlayer.close();
-
-            //If there is a timer running stop it
             if (_alarmObject != null)
-                _alarmObject.Exit();
+            {
+                //When we click btnSet it means that we
+                //1) want to set our alarm
+                //2) Made a mistake and changed options and pressed set again
 
-            //Use the factorymethod to create a timerobject and start it
-            _alarmObject = CreateAlarmTimer(_alarmTime);
-            _alarmObject.Start();
+                //If there was an alarm set, and timenarration is on, we need to turn it off
+                if (_narrationTask != null)
+                    _tokenSource.Cancel();
+
+                //Just to be sure, delete the media player too
+                if (_mediaPlayer != null)
+                    _mediaPlayer.close();
+
+                //If there is a timer running stop it
+                if (_alarmObject != null)
+                    _alarmObject.Exit();
+
+                btnSnooze.Enabled = false;
+                btnSet.Text = "Start Alarm";
+            }
+            else
+            {
+                //When we click btnSet it means that we
+                //1) want to set our alarm
+                //2) Made a mistake and changed options and pressed set again
+
+                //If there was an alarm set, and timenarration is on, we need to turn it off
+                if (_narrationTask != null)
+                    _tokenSource.Cancel();
+
+                //Just to be sure, delete the media player too
+                if (_mediaPlayer != null)
+                    _mediaPlayer.close();
+
+                //If there is a timer running stop it
+                if (_alarmObject != null)
+                    _alarmObject.Exit();
+
+                //Use the factorymethod to create a timerobject and start it
+                _alarmObject = CreateAlarmTimer(_alarmTime);
+                _alarmObject.Start();
+
+                btnSnooze.Enabled = true;
+                btnSet.Text = "Stop Alarm";
+            }
         }
         private void AlarmHit(object sender, EventArgs e)
         {
@@ -307,6 +350,30 @@ namespace Alarm_v2._0
             _startVolume = ((TrackBar)sender).Value;
         }
         #endregion
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSnooze_Click(object sender, EventArgs e)
+        {
+            //If there was an alarm set, and timenarration is on, we need to turn it off
+            if (_narrationTask != null)
+                _tokenSource.Cancel();
+
+            //Just to be sure, delete the media player too
+            if (_mediaPlayer != null)
+                _mediaPlayer.close();
+
+            //If there is a timer running stop it
+            if (_alarmObject != null)
+                _alarmObject.Exit();
+
+            //Use the factorymethod to create a timerobject and start it
+            _alarmObject = CreateAlarmTimer(DateTime.Now.AddMinutes(5));
+            _alarmObject.Start();
+        }
 
 
     }
