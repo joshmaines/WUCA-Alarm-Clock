@@ -5,6 +5,7 @@ Alarm clock desktop app written in C# for Windows 7+.
 Based on m1dnight's Alarm-Clock: https://github.com/m1dnight/Alarm-Clock
 
 Upcoming features:
+
 1. Full-screen button that toggles full-screen mode.
 2. Resizable window with side docking support.
 3. Snooze button! (Stops the alarm sound/song and replays it in 5 minutes.)
